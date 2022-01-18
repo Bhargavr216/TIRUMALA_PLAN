@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <style type="text/css">
+    @keyframes progress {
+  0% { --percentage: 0; }
+  100% { --percentage: var(--value); }
+}
+
+@property --percentage {
+  syntax: '<number>';
+  inherits: true;
+  initial-value: 0;
+}
+
+[role="progressbar"] {
+  --percentage: var(--value);
+  --primary: #369;
+  --secondary: #adf;
+  --size: 190px;
+  animation: progress 2s 0.5s forwards;
+  width: var(--size);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  margin-left: 88px;
+}
+
+[role="progressbar"]::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: conic-gradient(var(--primary) calc(var(--percentage) * 1%), var(--secondary) 0);
+  mask: radial-gradient(white 55%, transparent 0);
+  mask-mode: alpha;
+  -webkit-mask: radial-gradient(#0000 55%, #000 0);
+  -webkit-mask-mode: alpha;
+}
+
+[role="progressbar"]::after {
+  counter-reset: percentage var(--value);
+  content: counter(percentage) '%';
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: calc(var(--size) / 5);
+  color: var(--primary);
+}
+
+/* demo */
+body {
+  margin: 0;
+  display: grid;
+  place-items: center;
+  height: 50vh;
+  background: #f0f8ff;
+}
+    @import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+.login-page {
+  width: 660px;
+  padding: 8% 0 0;
+  margin: auto;
+}
+.form {
+  position: relative;
+  z-index: 1;
+  background: #FFFFFF;
+  max-width: 360px;
+  margin: 0 auto 100px;
+  padding: 45px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+.form input {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+.form button {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #4CAF50;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+.form button:hover,.form button:active,.form button:focus {
+  background: #43A047;
+}
+.form .message {
+  margin: 15px 0 0;
+  color: #b3b3b3;
+  font-size: 12px;
+}
+.form .message a {
+  color: #4CAF50;
+  text-decoration: none;
+}
+.form .register-form {
+  display: none;
+}
+.container {
+  position: relative;
+  z-index: 1;
+  max-width: 300px;
+  margin: 0 auto;
+}
+.container:before, .container:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.container .info {
+  margin: 50px auto;
+  text-align: center;
+}
+.container .info h1 {
+  margin: 0 0 15px;
+  padding: 0;
+  font-size: 36px;
+  font-weight: 300;
+  color: #1a1a1a;
+}
+.container .info span {
+  color: #4d4d4d;
+  font-size: 12px;
+}
+.container .info span a {
+  color: #000000;
+  text-decoration: none;
+}
+.container .info span .fa {
+  color: #EF3B3A;
+}
+body {
+  background: #76b852; /* fallback for old browsers */
+  background: -webkit-linear-gradient(right, #76b852, #8DC26F);
+  background: -moz-linear-gradient(right, #76b852, #8DC26F);
+  background: -o-linear-gradient(right, #76b852, #8DC26F);
+  background: linear-gradient(to left, #76b852, #8DC26F);
+  font-family: "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;      
+}
+// variables
+@mixin bp($class) {
+  @if $class == mobile {
+    @media (min-width: 640px) {
+      @content;
+    }
+  } @else if $class == tablet {
+    @media (min-width: 992px) {
+      @content;
+    }
+  } @else if $class == tablet-only {
+    @media (max-width: 992px) {
+      @content;
+    }
+  } @else if $class == laptop {
+    @media (min-width: 1024px) {
+      @content;
+    }
+  } @else if $class == desktop {
+    @media (min-width: 1280px) {
+      @content;
+    }
+  } @else if $class == cinema {
+    @media (min-width: 1536px) {
+      @content;
+    }
+  }
+}
+
+@mixin no-margin {
+  margin: 0;
+}
+@mixin labotomized-owl {
+  * + * {
+    margin: 0.75em 0 0;
+  }
+}
+// Variables
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap");
+$g-font-family: "Roboto Condensed", sans-serif;
+$g-line-height: 1.5 !default;
+$g-spacing: $g-line-height * 1em;
+$black: #000;
+$white: #fff;
+$g-font-color: #464646;
+$g-border-color: lighten($g-font-color, 15%);
+$g-background-color-dark: #18181b;
+$g-background-color-light: #f2f2f2;
+
+// global
+body,
+html {
+  min-height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1em;
+  line-height: 1.2;
+  background: $g-background-color-dark;
+  font-family: $g-font-family;
+  font-weight: 300;
+  box-sizing: border-box;
+  color: $white;
+  .wrapper {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+    padding: $g-spacing;
+  }
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+* {
+  @include labotomized-owl;
+}
+
+.table-responsive {
+  border-collapse: collapse;
+  margin: $g-spacing / 2 0;
+  table-layout: fixed;
+  @include no-margin;
+  width: 100%;
+  color: $g-font-color;
+  * {
+    font-size: 13px;
+  }
+  i {
+    &.blank {
+      display: none;
+    }
+  }
+
+  th {
+    border-bottom: 1px solid shade($g-border-color, 25%);
+    text-align: left;
+    padding: $g-spacing / 2 $g-spacing / 1.4;
+    text-align: center;
+    &:not([data-title]) {
+      font-weight: bold;
+      @include bp(tablet) {
+        border-right: 1px solid #037f9e;
+      }
+    }
+    &.table-column {
+      width: 200px;
+    }
+    &.row {
+      background: #09bad6;
+      color: $white;
+    }
+  }
+  th[data-title]:before,
+  td[data-title]:before {
+    content: attr(data-title) ":\00A0";
+    font-weight: bold;
+    text-align: left;
+    @include bp(tablet) {
+      content: none;
+    }
+  }
+  tr {
+    margin: 0 0 0rem 0;
+    &:nth-child(odd) {
+      background: lighten($g-background-color-light, 5%);
+
+      &.header-row {
+        background: #037f9e !important;
+        color: $white;
+      }
+    }
+    &:nth-child(even) {
+      background: lighten($g-background-color-light, 1%);
+    }
+    td {
+      /* Behave  like a "row" */
+      border: 0;
+      border-bottom: 1px solid darken($g-background-color-light, 11%);
+      position: relative;
+      padding-left: 50%;
+      padding-right: $g-spacing / 2;
+      text-align: right;
+      padding: 15px;
+      @include bp(tablet) {
+        vertical-align: top;
+        border-bottom: 0;
+        padding: $g-spacing;
+        border-right: 1px solid $white;
+        text-align: center;
+      }
+      ul {
+        margin-left: 0;
+        margin-bottom: 5px;
+        padding: 0 0 0 $g-spacing;
+
+        li {
+          padding: 3px 0;
+        }
+      }
+    }
+  }
+
+  @include bp(tablet-only) {
+    /* Force table to not be like tables anymore */
+    table,
+    thead,
+    tbody,
+    th,
+    td,
+    tr {
+      display: block;
+      vertical-align: middle;
+    }
+
+    /* Hide table headers (but not display: none;, for accessibility) */
+    thead tr {
+      position: absolute;
+      top: -9999px;
+      left: -9999px;
+    }
+
+    tr {
+      td {
+        &:before {
+          /* Now like a table header */
+          position: absolute;
+          /* Top/left values mimic padding */
+          //top: 0;
+          left: 6px;
+          width: 45%;
+          padding-right: 10px;
+          white-space: nowrap;
+          padding-left: $g-spacing / 2;
+        }
+        &.empty {
+          display: none;
+        }
+      }
+    }
+  }
+}
+tr{
+  font-weight: bold;
+}
+.paid{
+  color: green;
+  font-weight: bold;
+}
+.unpaid{
+ color: red;
+  font-weight: bold; 
+  }
+
+  </style>
+</head>
+<body>
+<div class="login-page">
+  <div class="form">
+    <div role="progressbar" aria-valuenow="28" aria-valuemin="0" aria-valuemax="100" style="--value: 28"></div>
+    <div> </div>
+    <div>
+      <h3 style="color: brown"> 310rs / 1085rs</h3></div>
+    <h2>Train tickets paid not paid list</h2>
+    <table class="table-responsive table-vaccine"><thead role="rowgroup">
+      <tr role="row" class="header-row">
+      <th  role="columnheader" class="table-column">PERSONS</th>
+      <th  role="columnheader">PAID STATUS</th></thead>
+      <tbody role="rowgroup">
+      <tr><td>Bhargav</td><td class="paid">PAID</td></tr>
+      <tr><td>Mani</td><td class="paid">PAID</td></tr>
+      <tr><td>Kalam</td><td class="unpaid">UNPAID</td></tr>
+      <tr><td>Juneed</td><td class="unpaid">UNPAID</td></tr>
+      <tr><td>Sundeep</td><td class="unpaid">UNPAID</td></tr>
+      <tr><td>kalyan</td><td class="unpaid">UNPAID</td></tr>
+      <tr><td>Suhel</td><td class="unpaid">UNPAID</td></tr></tbody></table>
+    <form class="login-form">
+      <h3 style="color:red;">PAY TO THESE NUMBER <SPAN style="color:green;font-weight: bold;">6301223071</SPAN></h3>
+    </form>
+  </div>
+</div>
+</body>
+<script type="text/javascript">
+  $('.message a').click(function(){
+   $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
+});
+</script>
+</html>
