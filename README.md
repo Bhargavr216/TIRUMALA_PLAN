@@ -1,37 +1,56 @@
-## Welcome to GitHub Pages
+# Train Ticket Payment Dashboard
 
-You can use the [editor on GitHub](https://github.com/Bhargavr216/TIRUMALA_PLAN/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
+## Description
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+This is a simple web application that tracks the payment status of train ticket bookings for a group of people. It displays the progress of the total payments made, calculates the due amount, and provides a clear overview of who has paid and who hasn't.
 
-### Markdown
+### Features:
+- **Progress Bar**: A visual indicator showing the percentage of total payments made.
+- **Payment Status**: A table where each person's payment status (Paid/Unpaid) can be toggled by clicking on the status cell.
+- **Total Paid & Due**: Dynamically updates the total amount paid and the amount still due as the payment statuses are toggled.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+## Demo
 
-```markdown
-Syntax highlighted code block
+A live demo is available [here](https://bhargavr216.github.io/TIRUMALA_PLAN/tirumala%20demo.html) (Insert demo link if available).
 
-# Header 1
-## Header 2
-### Header 3
+## How to Use
 
-- Bulleted
-- List
+1. Open the `index.html` file in a web browser.
+2. Click on any "UNPAID" status cell to toggle it to "PAID".
+3. The payment status of the selected person will change, and the total amounts (paid and due) will be updated automatically.
+4. The progress bar will reflect the updated percentage of total payments.
 
-1. Numbered
-2. List
+## Technologies Used
 
-**Bold** and _Italic_ and `Code` text
+- **HTML5**: For structuring the webpage.
+- **CSS3**: For styling the page with a clean and simple design.
+- **JavaScript**: For functionality such as toggling payment statuses, updating the progress bar, and recalculating the amounts.
 
-[Link](url) and ![Image](src)
+## File Structure
+
+```
+/index.html          # The main HTML file containing structure and scripts.
 ```
 
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
+## DEMO IMAGES
 
-### Jekyll Themes
+![image](https://github.com/user-attachments/assets/f78755c0-00d4-4360-8727-8da7a781e6e2)
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Bhargavr216/TIRUMALA_PLAN/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
 
-### Support or Contact
+## License
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+This project is open-source and available under the [MIT License](LICENSE).
+
+## Contributing
+
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature-branch`).
+3. Make your changes and commit them (`git commit -am 'Add new feature'`).
+4. Push to your branch (`git push origin feature-branch`).
+5. Create a new pull request.
+
+## Contact
+
+For more information or questions, feel free to reach out to:
+- [Bhargav]
+- [Bhargavr216]
